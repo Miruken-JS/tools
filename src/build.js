@@ -2,7 +2,7 @@ var path = require('path');
 var dag = require('breeze-dag');
 var through2 = require('through2');
 
-var relativeImports = /import\s*{[a-zA-Z0-9_\$\,\s]+}\s*from\s*'(\.[^\s']+)';\s*/g;
+var relativeImports = /import\s*{?[a-zA-Z0-9_\$\,\s]+}?\s*from\s*'(\.[^\s']+)';\s*/g;
 var nonRelativeImports = /import(\s*{?[a-zA-Z0-9_\$\*\,\s]+}?)?(\s*as\s*[a-zA-Z0-9_\$]+)?(\s*from)?\s*'[a-zA-Z0-9_\-\/]+';\s*/g;
 var importGrouper = /import\s*{([a-zA-Z0-9_\$\,\s]+)}\s*from\s*'([a-zA-Z0-9_\-\/]+)'\s*;\s*/;
 
