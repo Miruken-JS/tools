@@ -1,0 +1,24 @@
+{
+  "name": "miruken-tools",
+  "version": "0.0.0",
+  "description": "Tools and utility functions used to build and develop Miruken's libraries.",
+  "keywords": [
+    "miruken",
+    "tools"
+  ],
+  "homepage": "http://miruken.io",
+  "bugs": {
+    "url": "https://github.com/miruken/tools/issues"
+  },
+  "license": "MIT",
+  "author": "Craig Neuwirt <cneuwirt@gmail.com>",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/miruken/tools"
+  },
+  "dependencies": {
+    "breeze-dag": "^0.1.0",
+    "through2": "^2.0.0"
+  }
+}
