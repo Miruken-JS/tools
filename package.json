@@ -1,6 +1,6 @@
 {
   "name": "miruken-tools",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Tools and utility functions used to build and develop Miruken's libraries.",
   "keywords": [
     "miruken",

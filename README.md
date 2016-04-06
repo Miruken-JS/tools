@@ -5,10 +5,10 @@ Tools and utility functions used to build and develop Miruken's libraries.
 
 ## To create a dev environment:
 
-1. Create an aurelia directory to hold all of the projects.
+1. Create an miruken directory to hold all of the projects.
 
   ```shell
-  mkdir aurelia
+  mkdir miruken
   ```
 2. Change to the new directory
 
