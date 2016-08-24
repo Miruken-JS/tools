@@ -3,7 +3,7 @@ var dag = require('breeze-dag');
 var through2 = require('through2');
 
 var relativeImports = /import\s*{?[a-zA-Z0-9_\$\,\s]+}?\s*from\s*'(\.[^\s']+)';\s*/g;
-var nonRelativeImports = /import(\s*{?[a-zA-Z0-9_\$\*\,\s]+}?)?(\s*as\s*[a-zA-Z0-9_\$]+)?(\s*from)?\s*'[a-zA-Z0-9_\-\/]+';\s*/g;
+var nonRelativeImports = /import(\s*{?[a-zA-Z0-9_\$\*\,\s]+}?)?(\s*as\s*[a-zA-Z0-9_\$]+)?(\s*from)?\s*'[a-zA-Z0-9_\-\/]+(\.[^\s]*)?';\s*/g;
 var importGrouper = /import\s*{([a-zA-Z0-9_\$\,\s]+)}\s*from\s*'([a-zA-Z0-9_\-\/]+)'\s*;\s*/;
 
 exports.sortFiles = function sortFiles() {
@@ -93,3 +93,10 @@ exports.createImportBlock = function(importsToAdd){
 
   return importBlock + '\n';
 };
+
+exports.cleanGeneratedCode = function(code) {
+  var classCallCheckMethodMatcher = /function\s+_classCallCheck\(instance,\s+Constructor\)\s+\{\s+if\s+\(!\(instance\s+instanceof\s+Constructor\)\)\s+\{\s+throw\s+new\s+TypeError\("Cannot\s+call\s+a\s+class\s+as\s+a\s+function"\)\;\s+}\s+}/g;
+  var classCallCheckInvocationMatcher = /_classCallCheck\(this,\s[_a-zA-z1-9]+\);/g
+
+  return code.replace(classCallCheckMethodMatcher, '').replace(classCallCheckInvocationMatcher, '');
+}
