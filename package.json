@@ -1,6 +1,6 @@
 {
   "name": "miruken-tools",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Tools and utility functions used to build and develop Miruken's libraries.",
   "keywords": [
     "miruken",
@@ -11,7 +11,10 @@
     "url": "https://github.com/Miruken-JS/tools/issues"
   },
   "license": "MIT",
-  "author": ["Craig Neuwirt <cneuwirt@gmail.com>","Michael Dudley"],
+  "author": [
+    "Craig Neuwirt <cneuwirt@gmail.com>",
+    "Michael Dudley"
+  ],
   "main": "src/index.js",
   "repository": {
     "type": "git",
