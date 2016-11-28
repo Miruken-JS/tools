@@ -6,16 +6,16 @@
     "miruken",
     "tools"
   ],
-  "homepage": "http://miruken.io",
+  "homepage": "https://github.com/Miruken-JS/tools",
   "bugs": {
-    "url": "https://github.com/miruken/tools/issues"
+    "url": "https://github.com/Miruken-JS/tools/issues"
   },
   "license": "MIT",
-  "author": "Craig Neuwirt <cneuwirt@gmail.com>",
+  "author": ["Craig Neuwirt <cneuwirt@gmail.com>","Michael Dudley"],
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/miruken/tools"
+    "url": "http://github.com/Miruken-JS/tools"
   },
   "dependencies": {
     "breeze-dag": "^0.1.0",
