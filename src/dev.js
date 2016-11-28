@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var exec = require('child_process').exec;
-var gitPath = 'http://github.com/aurelia/';
+var gitPath = 'http://github.com/miruken-js/';
 var dependencyPath = 'jspm_packages/npm';
 
 if(!('endsWith' in String.prototype)){
@@ -47,14 +47,14 @@ var copy = function(src, dest) {
   oldFile.pipe(newFile);
 };
 
-var findAureliaDirectories = function(name) {
-  return name.startsWith('aurelia-');
+var findMirukenDirectories = function(name) {
+  return name.startsWith('miruken-');
 };
 
-var mapAureliaDirectories = function(name) {
+var mapMirukenDirectories = function(name) {
   return [
-    '../' + name.substring(0, name.indexOf('@')).replace('aurelia-', ''),
-    gitPath + name.substring(0, name.indexOf('@')).replace('aurelia-', '') + '.git'
+    '../' + name.substring(0, name.indexOf('@')).replace('miruken-', ''),
+    gitPath + name.substring(0, name.indexOf('@')).replace('miruken-', '') + '.git'
   ];
 };
 
@@ -73,10 +73,10 @@ module.exports = {
     }
 
     fs.readdirSync(dependencyPath)
-      .filter(function(name){ return name.startsWith('aurelia-') && name.endsWith('.js'); })
+      .filter(function(name){ return name.startsWith('miruken-') && name.endsWith('.js'); })
       .map(function(name) {
         return [
-          levels + name.substring(0, name.indexOf('@')).replace('aurelia-', '') + '/dist/amd',
+          levels + name.substring(0, name.indexOf('@')).replace('miruken-', '') + '/dist/amd',
           dependencyPath + '/' + name.substring(0, name.indexOf('.js'))
         ];
       }).forEach(function(value){
@@ -87,8 +87,8 @@ module.exports = {
   },
   buildDevEnv: function () {
     fs.readdirSync(dependencyPath)
-      .filter(findAureliaDirectories)
-      .map(mapAureliaDirectories)
+      .filter(findMirukenDirectories)
+      .map(mapMirukenDirectories)
       .forEach(function (value) {
         pullDevEnv(value);
 
@@ -107,8 +107,8 @@ module.exports = {
   },
   pullDevEnv: function () {
     fs.readdirSync(dependencyPath)
-      .filter(findAureliaDirectories)
-      .map(mapAureliaDirectories)
+      .filter(findMirukenDirectories)
+      .map(mapMirukenDirectories)
       .forEach(pullDevEnv);
 
     var sys = require('sys');
