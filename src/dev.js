@@ -81,6 +81,7 @@ module.exports = {
         ];
       }).forEach(function(value){
         if (fs.existsSync(value[0])) {
+          console.log("copying: " + value[0] + " to: " + value[1]);
           copyDir(value[0], value[1]);
         }
       });
